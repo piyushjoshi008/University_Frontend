@@ -1,1 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Piyush Joshi</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #0f172a;
+        color: #e2e8f0;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 40px;
+        background-color: #1e293b;
+        border-bottom: 1px solid #334155;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .logo {
+        font-weight: 700;
+        font-size: 20px;
+        color: #ffffff;
+    }
+
+    .logo span {
+        color: #38bdf8;
+    }
+
+    .navbar nav {
+        display: flex;
+        gap: 20px;
+    }
+
+    .navbar a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .navbar a:hover {
+        color: #38bdf8;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 80px 20px 60px;
+        background-color: #312e81;
+        border-bottom: 1px solid #334155;
+    }
+
+    .hero-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        color: #ffffff;
+        margin-bottom: 8px;
+    }
+
+    .highlight {
+        color: #38bdf8;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        color: #a5b4fc;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .bio {
+        color: #cbd5e1;
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .section h2 {
+        font-size: 22px;
+        color: #ffffff;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .section h2::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: #38bdf8;
+        margin-top: 6px;
+        border-radius: 2px;
+    }
+
+    .card {
+        background-color: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 10px;
+        padding: 24px;
+    }
+
+    .about-card {
+        border-left: 4px solid #38bdf8;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .skill-card h3 {
+        font-size: 18px;
+        color: #ffffff;
+        margin-bottom: 8px;
+    }
+
+    .skill-card p {
+        font-size: 14px;
+        color: #94a3b8;
+        margin-bottom: 14px;
+    }
+
+    .skill-tag {
+        display: inline-block;
+        background-color: #0f172a;
+        border: 1px solid #334155;
+        color: #38bdf8;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 6px;
+        margin-bottom: 6px;
+    }
+
+    .project-card {
+        border-top: 3px solid #38bdf8;
+    }
+
+    .tag {
+        font-size: 11px;
+        font-weight: 700;
+        color: #38bdf8;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 8px;
+    }
+
+    .project-card h3 {
+        font-size: 18px;
+        color: #ffffff;
+        margin-bottom: 8px;
+    }
+
+    .project-card p {
+        font-size: 14px;
+        color: #94a3b8;
+    }
+
+    .contact-card {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #334155;
+        font-size: 15px;
+    }
+
+    .info-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .info-row strong {
+        color: #38bdf8;
+    }
+
+    .info-row a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .info-row a:hover {
+        color: #38bdf8;
+        text-decoration: underline;
+    }
+
+    footer {
+        text-align: center;
+        padding: 24px;
+        color: #64748b;
+        font-size: 14px;
+        background-color: #0b0f19;
+        border-top: 1px solid #1e293b;
+    }
+</style>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Piyush Joshi<span>.</span></div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Piyush Joshi</span></h1>
+            <p class="subtitle">Computer Science Student & Learner</p>
+            <p class="bio">Building fundamental web projects and practicing data structures and algorithms.</p>
+        </div>
+    </section>
+
+    <section id="about" class="container section">
+        <h2>About Me</h2>
+        <div class="card about-card">
+            <p>I am a beginner developer currently learning frontend basics and practicing problem-solving. I am focused
+                on mastering HTML, CSS, and core coding concepts to build clean and useful projects.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="container section">
+        <h2>Skills & Focus Areas</h2>
+        <div class="grid">
+            <div class="card skill-card">
+                <h3>Web Development</h3>
+                <p>Creating clean, responsive web pages using modern HTML5 semantic tags and CSS layout techniques.</p>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">Flexbox</span>
+            </div>
+            <div class="card skill-card">
+                <h3>Problem Solving</h3>
+                <p>Practicing data structures and algorithm basics regularly to build core programming logic.</p>
+                <span class="skill-tag">LeetCode</span>
+                <span class="skill-tag">C++ / Java / Python</span>
+            </div>
+            <div class="card skill-card">
+                <h3>Tools & Platforms</h3>
+                <p>Using essential developer tools for code management and online platform presence.</p>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">VS Code</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container section">
+        <h2>Projects</h2>
+        <div class="grid">
+            <div class="card project-card">
+                <span class="tag">HTML / CSS</span>
+                <h3>Personal Portfolio</h3>
+                <p>A simple, beginner-friendly portfolio page designed to showcase my profile and contact details.</p>
+            </div>
+            <div class="card project-card">
+                <span class="tag">Web Layout</span>
+                <h3>Landing Page</h3>
+                <p>A basic landing page layout practicing alignment, color contrast, and font styling.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container section">
+        <h2>Contact & Profiles</h2>
+        <div class="card contact-card">
+            <div class="info-row">
+                <strong>Name:</strong>
+                <span>Piyush Joshi</span>
+            </div>
+            <div class="info-row">
+                <strong>Email:</strong>
+                <a href="mailto:official.piyushjoshi008@gmail.com">official.piyushjoshi008@gmail.com</a>
+            </div>
+            <div class="info-row">
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/piyush-joshi-0713bb391"
+                    target="_blank">linkedin.com/in/piyushjoshi008</a>
+            </div>
+            <div class="info-row">
+                <strong>LeetCode:</strong>
+                <a href="https://leetcode.com/u/piyushjoshi008" target="_blank">leetcode.com/u/piyushjoshi008</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Piyush Joshi. Built with HTML and CSS.</p>
+    </footer>
+
+</body>
+
+</html>
